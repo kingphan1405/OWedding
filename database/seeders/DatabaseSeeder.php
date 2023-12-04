@@ -25,6 +25,12 @@ class DatabaseSeeder extends Seeder
                 BudgetItem::factory()->count($numberItems)->for($budgetCategory)->create();
             }); 
         });
+        User::factory()->create([
+            'name' => 'admin',
+            'email' => 'admin1@gmail.com',
+            'password'=>11223344,
+            'role'=>'admin',
+        ]);
         Task::factory()->create([
             'user_id' => 2,
             'title'=> 'tesst title2',   

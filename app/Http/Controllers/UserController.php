@@ -44,7 +44,8 @@ class UserController extends Controller
             'name' => ['required', 'min:3', 'max:255', Rule::unique('users', 'name')],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => ['required', 'min:8', 'max:200'],
-            'retype_password' => ['required', 'same:password']
+            'retype_password' => ['required', 'same:password'],
+            'role'=>'required',
         ]);
         $user = new User;
         $user->name = $data['name'];
@@ -53,6 +54,7 @@ class UserController extends Controller
         $user->password = bcrypt($data['password']);
         $user->current_budget = 0;
         $user->remember_token = Str::random(10);
+        $user->role = $data['role'];
         $user->save();
         $request->session()->put('user', $user);
 

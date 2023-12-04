@@ -12,6 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\UserWebController;
+use App\Http\Controllers\AdminController;
 use App\Models\Fiance;
 use App\Models\LoveStory;
 use App\Models\Task;
@@ -65,7 +66,8 @@ Route::resource('/owedding/users',UserController::class)->only([
   'index', 'store', 'update'
 ]);
 
-
+//ADMIN
+Route::resource('/owedding/admin',AdminController::class);
 
 
 //BUDGET MANAGEMENT

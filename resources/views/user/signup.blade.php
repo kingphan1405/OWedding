@@ -93,6 +93,13 @@
             <img src="/image/Signinimg.png" alt="">
         </div>
     </div>
+    <div class="signup-form__group">
+    <label for="role" class="signup-form__label">Role</label>
+    <select id="role" name="role" required>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+    </select>
+</div>
 </body>
 
 </html>
